@@ -6,9 +6,10 @@ import time
 import math
 from selenium.webdriver.support.ui import Select
 import os
+import pytest
 import unittest
 
-class TestWeb(unittest.TestCase):
+class Test_Web(unittest.TestCase):
     def test_web1(self):
         link = "http://suninjuly.github.io/registration1.html"
         data = {"first":"aboba", "second":"Dirova", "third":"aboba@mail.com"}
@@ -52,6 +53,5 @@ class TestWeb(unittest.TestCase):
         answer = browser.find_element_by_class_name("container").text
         browser.quit()
         self.assertEqual(answer, "Congratulations! You have successfully registered!", "Something was wrong :(")
-
-unittest.main()
+pytest.main()
 
