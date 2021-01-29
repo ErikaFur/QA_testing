@@ -1,5 +1,6 @@
 from project.MainPage import MainPageClass
 from project.LoginPage import LoginPageClass
+from project.ObjectPage import ObjectPageClass
 
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
@@ -20,3 +21,4 @@ def test_guest_go_to_basket(browser):
     page = MainPageClass(browser, link)
     page.open()
     page.go_to_basket()
+
