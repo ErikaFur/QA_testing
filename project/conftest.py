@@ -15,5 +15,4 @@ def browser(request):
     browser = webdriver.Chrome(executable_path=r'C:\Users\KAMUz\Desktop\chromedriver\chromedriver.exe', options=options)
     yield browser
     print("\nClose browser")
-    time.sleep(4)
     browser.quit()
