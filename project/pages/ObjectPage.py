@@ -1,14 +1,7 @@
-import time
-
-from project.BasePage import BasePageClass
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
-
-from project.basket_page import BasketPage
-from project.locators import MainPageLocators
-from project.LoginPage import LoginPageClass
-from project.locators import ObjectPageLocator
+from project.pages.BasePage import BasePageClass
+from project.pages.basket_page import BasketPage
+from project.pages.locators import BasePageLocators
+from project.pages.locators import ObjectPageLocator
 
 
 class ObjectPageClass(BasePageClass):
@@ -46,7 +39,7 @@ class ObjectPageClass(BasePageClass):
         new_page.is_basket_empty()
 
     def should_be_login_link(self):
-        assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
     def guest_cant_see_success_message_after_adding_product_to_basket(self):
         assert self.is_not_element_present(*ObjectPageLocator.SUCCESS_MESSAGE),  "Object is presented!"
